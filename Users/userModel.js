@@ -10,7 +10,7 @@ module.exports = {
 }  
 function add(user){
     return db('users')
-    .insert(user, 'id')
+    .insert(user , 'id')
     .then(ids => {
       const [id] = ids;
       return findById(id);
@@ -22,7 +22,7 @@ return db('users').select('id', 'username', 'password');
 function findBy(userfilter){
 return db('users').where(userfilter);
 } 
-function findById(){
+function findById(id){
     return db('users')
     .where({ id })
     .first();

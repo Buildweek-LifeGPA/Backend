@@ -1,7 +1,8 @@
-const db = require('../DataBase/db_config.js');
+//const db = require('../DataBase/db_config.js');
 const express = require("express");
 const User = require("./userModel.js");
 const router = express.Router();
+console.log("abc") 
 
 router.get('/' , (req,res) => {
     User.find()
@@ -21,7 +22,7 @@ router.get('/:id' , (req,res) => {
     })
 })  
 
-router.post('/Login' , (req,res) => {
+router.post('/login' , (req,res) => {
   const {username , password} = req.body;
   User.findBy({username}) 
   .then(user => {
@@ -37,15 +38,17 @@ router.post('/Login' , (req,res) => {
   })
 }) 
 
-router.post('/Register' , (req,res) => {
-const {username , password} = req.body;
-User.add({username , password})
+router.post('/register' ,(req,res) => { 
+console.log( "hello1");
+const user = req.body;  
+User.add(user)
 .then(newUser => {
     res.status(201).json(newUser);
 }) 
-.catch(error => {
+.catch(error => { 
+    console.log(error)
     res.status(500).json({error : "Could not register  a new user"})
 })  
 })
-
+ 
 module.exports = router;

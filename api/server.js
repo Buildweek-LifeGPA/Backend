@@ -1,10 +1,10 @@
 const express = require('express'); 
 const userRouter = require('../Users/userRouter.js');
 const server = express();
-server.use(express.json()); 
 server.get('/' , (req, res) => {
     res.json({message: 'Server is Working ...'})
 })  
-
-server.use("/api/user", userRouter);
+console.log("hello")
+server.use(express.json()); 
+server.use('/api/users', userRouter);
 module.exports = server;
