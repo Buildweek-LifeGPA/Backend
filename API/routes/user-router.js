@@ -23,12 +23,16 @@ const secret = require("../../config/jwt_secret.js");
 // });
 
 router.post("/login", (req, res) => {
-  const { username, password } = req.body;
-
+  const { username, password } = req.body; 
+  
   User.findBy({ username })
-    .then(user => {
-      if (user) {
-        res.status(200).json(user);
+    .then(user => { 
+      const authenticate = bcrypt.compareSync(password , user.password);
+      if (user && authenticate) { 
+        const token = genreateToken(user);
+        res.status(200).json(
+          { user:user , 
+            token:token});
       } else {
         res.status(401).json({ error: "Invalid Credentials" });
       }
@@ -39,15 +43,16 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
-  const user = req.body;
+  const {user , password} = req.body;  
+  const hash = bcrypt.hashSync(password , 12);
 
-  User.add(user)
+  User.add({user , password: hash})
     .then(newUser => {
       res.status(201).json(newUser);
     })
     .catch(error => {
       console.log(error);
-      res.status(500).json({ error: "Could not register  a new user" });
+      res.status(500).json({ error: "Could not register a new user" });
     });
 }); 
 
