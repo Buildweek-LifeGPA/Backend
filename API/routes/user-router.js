@@ -67,6 +67,7 @@ function genreateToken() {
     expiresIn: "1d"
   }; 
   return jwt.sign(payload, secret.jwtSecret, options);
-}
+} 
+
 
 module.exports = router;
