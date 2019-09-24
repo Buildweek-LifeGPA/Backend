@@ -1,31 +1,29 @@
 {
-  "name": "backend",
+  "name": "Backend",
   "version": "1.0.0",
-  "description": "This is the backend for the LifeGPA build week project",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1",
-    "helmet": "^3.21.1",
-    "knex": "^0.19.4",
-    "knex-cleaner": "^1.3.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.2"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Buildweek-LifeGPA/Backend.git"
   },
-  "author": "Christian Helms & Fnu Bharti",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Buildweek-LifeGPA/Backend/issues"
   },
-  "homepage": "https://github.com/Buildweek-LifeGPA/Backend#readme"
+  "homepage": "https://github.com/Buildweek-LifeGPA/Backend#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.4",
+    "minipass": "^2.7.0",
+    "sqlite3": "^4.1.0"
+  }
 }
