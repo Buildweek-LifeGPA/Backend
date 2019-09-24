@@ -40,3 +40,20 @@ Get 200 Status Back
 
 }
 ```
+
+## Get A List Of All Habits
+POST localhost:5000/api/habits <------ Will be replaced by Heroku url
+
+```
+Get 200 Status Back  
+
+{  
+
+    "id": "1",  
+
+    "username": "hello",  
+
+    "password": "world"  
+
+}
+```
