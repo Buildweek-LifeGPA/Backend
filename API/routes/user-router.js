@@ -49,6 +49,19 @@ router.post("/register", (req, res) => {
       console.log(error);
       res.status(500).json({ error: "Could not register  a new user" });
     });
-});
+}); 
+
+// Genreate Token 
+
+function genreateToken() {
+  const payload = {
+    username: user.username
+  };
+
+  const options = {
+    expiresIn: "1d"
+  }; 
+  return jwt.sign(payload, secret.jwtSecret, options);
+}
 
 module.exports = router;
