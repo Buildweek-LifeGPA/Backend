@@ -10,7 +10,7 @@ What is the preferred way of using the API? The API supplies a token upon loggin
 ## Registration
 POST localhost:5000/api/users/register <------ Will be replaced by Heroku url
 
-``
+```
 Get 201 Status Back  
 
 {  
@@ -22,12 +22,12 @@ Get 201 Status Back
     "password": "world"  
 
 }
-``
+```
 
 ## Login
 POST localhost:5000/api/users/login <------ Will be replaced by Heroku url
 
-``
+```
 Get 200 Status Back  
 
 {  
@@ -39,4 +39,4 @@ Get 200 Status Back
     "password": "world"  
 
 }
-``
+```
