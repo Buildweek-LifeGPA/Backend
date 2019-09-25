@@ -40,3 +40,38 @@ Get 200 Status Back
 
 }
 ```
+
+## Get A List Of All Habits
+GET localhost:5000/api/habits <------ Will be replaced by Heroku url
+
+```
+Get 200 Status Back  
+
+[
+  {
+    "id": 2,
+    "habit_text": "Walk the dog",
+    "user_id": 1
+  },
+  {
+    "id": 3,
+    "habit_text": "Walk the dog more",
+    "user_id": 1
+  }
+]
+```
+## Add A Habit
+POST localhost:5000/api/habits <------ Will be replaced by Heroku url
+
+```
+Get 201 Status Back  
+
+{
+  "id": 1,
+  "habit_text": "Walk the dog more",
+  "user_id": 1
+}
+```
+
+## Deleta A Habit
+DELETE localhost:5000/api/habits/:id <------ Will be replaced by Heroku url
