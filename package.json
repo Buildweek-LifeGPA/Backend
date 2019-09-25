@@ -18,7 +18,8 @@
     "knex-cleaner": "^1.3.0",
     "minipass": "^2.7.0",
     "moment": "^2.24.0",
-    "sqlite3": "^4.1.0"
+    "sqlite3": "^4.1.0",
+    "node-pre-gyp": "0.12.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2",
