@@ -39,9 +39,6 @@ Get 200 Status Back
     "password": "world"  
 
 }
-<<<<<<< HEAD
-````
-=======
 ```
 
 ## Get A List Of All Habits
@@ -78,4 +75,3 @@ Get 201 Status Back
 
 ## Deleta A Habit
 DELETE localhost:5000/api/habits/:id <------ Will be replaced by Heroku url
->>>>>>> 430d00cd0b6e7c9f0eaa83828ac8fef3487e32f7
