@@ -5,6 +5,7 @@ const helmet = require('helmet');
 
 // Files
 const userRouter = require('../API/routes/user-router')
+const habitRouter = require('../API/routes/habit-router');
 
 const server = express();
 
@@ -15,6 +16,7 @@ server.use(helmet());
 
 // Use Files
 server.use('/api/users', userRouter);
+server.use('/api/habits', habitRouter);
 
 
 // Sanity Check
