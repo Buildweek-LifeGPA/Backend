@@ -8,7 +8,7 @@ What is the preferred way of using the API? The API supplies a token upon loggin
 # Endpoints  
 
 ## Registration
-POST localhost:5000/api/users/register <------ Will be replaced by Heroku url
+POST https://lifegpa-201910.herokuapp.com/api/users/register
 
 ```
 Get 201 Status Back  
@@ -25,7 +25,7 @@ Get 201 Status Back
 ```
 
 ## Login
-POST localhost:5000/api/users/login <------ Will be replaced by Heroku url
+POST https://lifegpa-201910.herokuapp.com/api/users/login
 
 ```
 Get 200 Status Back  
@@ -42,7 +42,7 @@ Get 200 Status Back
 ```
 
 ## Get A List Of All Habits
-POST localhost:5000/api/habits <------ Will be replaced by Heroku url
+GET https://lifegpa-201910.herokuapp.com/api/habits
 
 ```
 Get 200 Status Back  
@@ -57,3 +57,22 @@ Get 200 Status Back
 
 }
 ```
+
+## Create A New Habits
+POST https://lifegpa-201910.herokuapp.com/api/habits
+
+```
+Get 201 Status Back  
+
+{
+  "id": 4,  
+
+  "habit_text": "Walk the dog more",  
+
+  "user_id": 1  
+
+}
+```
+
+## Delete A Habit
+DELETE https://lifegpa-201910.herokuapp.com/api/habits/:id
