@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require("../models/user-model");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const secret = require("../../config/jwt_secret.js");
 
@@ -25,28 +25,28 @@ const secret = require("../../config/jwt_secret.js");
 router.post("/login", (req, res) => {
   const { username, password } = req.body; 
   
-  User.findBy({ username })
-    .then(user => { 
-      const authenticate = bcrypt.compareSync(password , user.password);
-      if (user && authenticate) { 
-        const token = genreateToken(user);
-        res.status(200).json(
-          { user:user , 
-            token:token});
+  User.findBy({username}).first() 
+    .then(user => {  
+      console.log(user)
+     // const authenticate = bcrypt.compareSync(password , user.password); 
+      if (user && bcrypt.compareSync(password , user.password)) { 
+        const token = genreateToken(user); 
+        res.status(200).json({token , id: user.id}); 
+        console.log({ id: user.id});
       } else {
         res.status(401).json({ error: "Invalid Credentials" });
       }
     })
-    .catch(error => {
-      res.status(500).json({ error: "Server Could not log you in" });
-    });
+    // .catch(error => {
+    //   res.status(500).json({ error: "Server Could not log you in" , error });
+    // });
 });
 
 router.post("/register", (req, res) => {
-  const {user , password} = req.body;  
+  const {username , password} = req.body;  
   const hash = bcrypt.hashSync(password , 12);
 
-  User.add({user , password: hash})
+  User.add({username , password: hash})
     .then(newUser => {
       res.status(201).json(newUser);
     })
@@ -58,8 +58,9 @@ router.post("/register", (req, res) => {
 
 // Genreate Token 
 
-function genreateToken() {
+function genreateToken(user) { 
   const payload = {
+    sub: user.id,
     username: user.username
   };
   const options = {

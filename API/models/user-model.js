@@ -24,7 +24,7 @@ function find() {
 }
 
 function findBy(userfilter) {
-  return db("users").where(userfilter);
+  return db("users").where(userfilter)
 }
 
 function findById(id) {
