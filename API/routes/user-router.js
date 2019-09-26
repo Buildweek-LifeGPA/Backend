@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const secret = require("../../config/jwt_secret.js");
-
+const restricted = require("../middleware/middleware.js");
 // router.get("/", (req, res) => {
 //   User.find().then(users => {
 //     res.status(200).json(users);
@@ -22,7 +22,7 @@ const secret = require("../../config/jwt_secret.js");
 //     });
 // });
 
-router.post("/login", (req, res) => {
+router.post("/login", restricted.validateUser ,(req, res) => {
   const { username, password } = req.body; 
   
   User.findBy({username}).first() 
