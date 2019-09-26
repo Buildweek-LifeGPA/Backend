@@ -32,30 +32,9 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.19.4",
     "knex-cleaner": "^1.3.0",
-<<<<<<< HEAD
     "minipass": "^2.7.0",
     "moment": "^2.24.0",
     "sqlite3": "^4.1.0",
     "supertest": "^4.0.2"
   }
-=======
-    "node-pre-gyp": "0.12.0",
-    "moment": "^2.24.0",
-    "sqlite3": "^4.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.19.2",
-    "node-pre-gyp": "0.12.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Buildweek-LifeGPA/Backend.git"
-  },
-  "author": "Christian Helms & Fnu Bharti",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Buildweek-LifeGPA/Backend/issues"
-  },
-  "homepage": "https://github.com/Buildweek-LifeGPA/Backend#readme"
->>>>>>> master
 }
